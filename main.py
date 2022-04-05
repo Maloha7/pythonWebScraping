@@ -6,6 +6,9 @@ with open('index.html', 'r') as html_file:
     #New BeautifulSoup instance
     bs = BeautifulSoup(content, "lxml")
 
-    h1tags = bs.findAll('h1')
-    print(h1tags)
+    sections = bs.find_all('div', class_='section')
+    
+    for section in sections:
+        print(section.button.text)
+
     
